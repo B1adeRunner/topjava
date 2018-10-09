@@ -46,6 +46,16 @@ public class MealsUtil {
                 .collect(toList());
     }
 
+    public static List<MealWithExceed> convertToMealsWithExeeds(List<Meal> meals, int caloriesPerDay) {
+
+        final Map<LocalDate, Integer> caloriesSumByDate = new HashMap<>();
+        meals.forEach(meal -> caloriesSumByDate.merge(meal.getDate(), meal.getCalories(), Integer::sum));
+
+        final List<MealWithExceed> mealsWithExceeded = new ArrayList<>();
+        meals.forEach(meal -> mealsWithExceeded.add(createWithExceed(meal, caloriesSumByDate.get(meal.getDate()) > caloriesPerDay)));
+        return mealsWithExceeded;
+    }
+
     public static List<MealWithExceed> getFilteredWithExceededByCycle(List<Meal> meals, LocalTime startTime, LocalTime endTime, int caloriesPerDay) {
 
         final Map<LocalDate, Integer> caloriesSumByDate = new HashMap<>();
