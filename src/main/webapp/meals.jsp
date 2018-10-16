@@ -30,6 +30,27 @@
         <input title="authorised" name="authorised" value="true" hidden>
         <input type="submit" formaction="/meals" value="Выбрать">
     </form>
+
+    <form method="post" action="meals">
+        <dl>
+            <dt>Время с:</dt>
+            <dd><input type="time" name="activeFromTime" ></dd>
+            <dt>Время по:</dt>
+            <dd><input type="time" name="activeToTime" ></dd>
+        </dl>
+
+        <dl>
+            <dt>Дата с:</dt>
+            <dd><input type="date" name="activeFromDate" ></dd>
+            <dt>Дата по:</dt>
+            <dd><input type="date" name="activeToDate" ></dd>
+        </dl>
+        <input title="filter" name="filter" value="filter" hidden>
+        <button type="submit">Отфильтровать</button>
+    </form>
+
+
+
     <a href="meals?action=create">Add Meal</a>
     <hr/>
     <table border="1" cellpadding="8" cellspacing="0">

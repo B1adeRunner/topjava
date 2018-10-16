@@ -7,6 +7,8 @@ import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.service.MealService;
 import ru.javawebinar.topjava.to.MealWithExceed;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 import static ru.javawebinar.topjava.util.ValidationUtil.assureIdConsistent;
@@ -21,6 +23,11 @@ public abstract class AbstractMealController {
     public List<MealWithExceed> getAll() {
         log.info("getAll");
         return service.getAll();
+    }
+
+    public List<MealWithExceed> getAll(LocalDate activeFromDate, LocalDate activeToDate, LocalTime activeFromTime, LocalTime activeToTime ) {
+        log.info("getAll");
+        return service.getAll( activeFromDate, activeToDate, activeFromTime, activeToTime );
     }
 
     public Meal get(int id) {

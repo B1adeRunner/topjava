@@ -9,6 +9,8 @@ import ru.javawebinar.topjava.util.MealsUtil;
 import ru.javawebinar.topjava.util.exception.NotFoundException;
 import ru.javawebinar.topjava.web.SecurityUtil;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,5 +67,10 @@ public class MealServiceImpl implements MealService {
     @Override
     public List<MealWithExceed> getAll() {
         return MealsUtil.getWithExceeded( new ArrayList<>( repository.getAll( SecurityUtil.getAuthUserId() ) ), MealsUtil.DEFAULT_CALORIES_PER_DAY );
+    }
+
+    @Override
+    public List<MealWithExceed> getAll(LocalDate activeFromDate, LocalDate activeToDate, LocalTime activeFromTime, LocalTime activeToTime) {
+        return MealsUtil.getFilteredWithExceeded( new ArrayList<>( repository.getAll( activeFromDate, activeToDate, SecurityUtil.getAuthUserId() ) ), MealsUtil.DEFAULT_CALORIES_PER_DAY,activeFromTime, activeToTime );
     }
 }
