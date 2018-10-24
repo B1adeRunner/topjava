@@ -12,9 +12,9 @@ INSERT INTO user_roles (role, user_id) VALUES
   ('ROLE_ADMIN', 100001);
 
 INSERT INTO meals (datetime, user_id, description, calories) VALUES
-  (to_timestamp('2015-06-30 10:00','YYYY-MM-DD HH24:MI'), 100000, 'Завтрак', 1000),
-  (to_timestamp('2015-06-30 13:00','YYYY-MM-DD HH24:MI'), 100000, 'Обед', 500),
-  (to_timestamp('2015-06-30 20:00','YYYY-MM-DD HH24:MI'), 100000, 'Ужин', 1000),
-  (to_timestamp('2015-06-31 10:00','YYYY-MM-DD HH24:MI'), 100001, 'Завтрак', 1000),
-  (to_timestamp('2015-06-31 13:00','YYYY-MM-DD HH24:MI'), 100001, 'Обед', 500),
-  (to_timestamp('2015-06-31 20:00','YYYY-MM-DD HH24:MI'), 100001, 'Ужин', 510);
+  (to_timestamp('2015-07-30 10:00','YYYY-MM-DD HH24:MI'), 100000, 'Завтрак', 1000),
+  (to_timestamp('2015-07-30 13:00','YYYY-MM-DD HH24:MI'), 100000, 'Обед', 500),
+  (to_timestamp('2015-07-30 20:00','YYYY-MM-DD HH24:MI'), 100000, 'Ужин', 1000),
+  (to_timestamp('2015-07-31 10:00','YYYY-MM-DD HH24:MI'), 100001, 'Завтрак', 1000),
+  (to_timestamp('2015-07-31 13:00','YYYY-MM-DD HH24:MI'), 100001, 'Обед', 500),
+  (to_timestamp('2015-07-31 20:00','YYYY-MM-DD HH24:MI'), 100001, 'Ужин', 510);
